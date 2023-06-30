@@ -46,29 +46,29 @@ type Flags struct {
 
 // CommandLineFlags holds the list of command line flags used to configure the device plugin and GFD.
 type CommandLineFlags struct {
-	MigStrategy      *string                 `json:"migStrategy"                yaml:"migStrategy"`
-	FailOnInitError  *bool                   `json:"failOnInitError"            yaml:"failOnInitError"`
+	MigStrategy      *string                 `json:"migStrategy,omitempty"      yaml:"migStrategy,omitempty"`
+	FailOnInitError  *bool                   `json:"failOnInitError,omitempty"  yaml:"failOnInitError,omitempty"`
 	NvidiaDriverRoot *string                 `json:"nvidiaDriverRoot,omitempty" yaml:"nvidiaDriverRoot,omitempty"`
-	GDSEnabled       *bool                   `json:"gdsEnabled"                 yaml:"gdsEnabled"`
-	MOFEDEnabled     *bool                   `json:"mofedEnabled"               yaml:"mofedEnabled"`
+	GDSEnabled       *bool                   `json:"gdsEnabled,omitempty"       yaml:"gdsEnabled,omitempty"`
+	MOFEDEnabled     *bool                   `json:"mofedEnabled,omitempty"     yaml:"mofedEnabled,omitempty"`
 	Plugin           *PluginCommandLineFlags `json:"plugin,omitempty"           yaml:"plugin,omitempty"`
 	GFD              *GFDCommandLineFlags    `json:"gfd,omitempty"              yaml:"gfd,omitempty"`
 }
 
 // PluginCommandLineFlags holds the list of command line flags specific to the device plugin.
 type PluginCommandLineFlags struct {
-	PassDeviceSpecs    *bool   `json:"passDeviceSpecs"    yaml:"passDeviceSpecs"`
-	DeviceListStrategy *string `json:"deviceListStrategy" yaml:"deviceListStrategy"`
-	DeviceIDStrategy   *string `json:"deviceIDStrategy"   yaml:"deviceIDStrategy"`
+	PassDeviceSpecs    *bool   `json:"passDeviceSpecs,omitempty"    yaml:"passDeviceSpecs,omitempty"`
+	DeviceListStrategy *string `json:"deviceListStrategy,omitempty" yaml:"deviceListStrategy,omitempty"`
+	DeviceIDStrategy   *string `json:"deviceIDStrategy,omitempty"   yaml:"deviceIDStrategy,omitempty"`
 }
 
 // GFDCommandLineFlags holds the list of command line flags specific to GFD.
 type GFDCommandLineFlags struct {
-	Oneshot         *bool     `json:"oneshot"         yaml:"oneshot"`
-	NoTimestamp     *bool     `json:"noTimestamp"     yaml:"noTimestamp"`
-	SleepInterval   *Duration `json:"sleepInterval"   yaml:"sleepInterval"`
-	OutputFile      *string   `json:"outputFile"      yaml:"outputFile"`
-	MachineTypeFile *string   `json:"machineTypeFile" yaml:"machineTypeFile"`
+	Oneshot         *bool     `json:"oneshot,omitempty"         yaml:"oneshot,omitempty"`
+	NoTimestamp     *bool     `json:"noTimestamp,omitempty"     yaml:"noTimestamp,omitempty"`
+	SleepInterval   *Duration `json:"sleepInterval,omitempty"   yaml:"sleepInterval,omitempty"`
+	OutputFile      *string   `json:"outputFile,omitempty"      yaml:"outputFile,omitempty"`
+	MachineTypeFile *string   `json:"machineTypeFile,omitempty" yaml:"machineTypeFile,omitempty"`
 }
 
 // UpdateFromCLIFlags updates Flags from settings in the cli Flags if they are set.

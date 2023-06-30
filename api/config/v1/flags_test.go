@@ -128,13 +128,8 @@ func TestMarshalFlags(t *testing.T) {
 		err    bool
 	}{
 		{
-			input: Flags{},
-			output: `{
-				"migStrategy": null,
-				"failOnInitError": null,
-				"gdsEnabled": null,
-				"mofedEnabled": null
-			}`,
+			input:  Flags{},
+			output: `{}`,
 		},
 		{
 			input: Flags{
@@ -145,16 +140,8 @@ func TestMarshalFlags(t *testing.T) {
 				},
 			},
 			output: `{
-				"migStrategy": null,
-				"failOnInitError": null,
-				"gdsEnabled": null,
-				"mofedEnabled": null,
 				"gfd": {
-					"oneshot": null,
-					"noTimestamp": null,
-					"outputFile": null,
-					"sleepInterval": "0s",
-					"machineTypeFile": null
+					"sleepInterval": "0s"
 				}
 			}`,
 		},
@@ -167,16 +154,8 @@ func TestMarshalFlags(t *testing.T) {
 				},
 			},
 			output: `{
-				"migStrategy": null,
-				"failOnInitError": null,
-				"gdsEnabled": null,
-				"mofedEnabled": null,
 				"gfd": {
-					"oneshot": null,
-					"noTimestamp": null,
-					"outputFile": null,
-					"sleepInterval": "5ns",
-					"machineTypeFile": null
+					"sleepInterval": "5ns"
 				}
 			}`,
 		},
