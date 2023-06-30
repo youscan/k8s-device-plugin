@@ -50,10 +50,10 @@ type TimeSlicing struct {
 
 // ReplicatedResource represents a resource to be replicated.
 type ReplicatedResource struct {
-	Name     ResourceName      `json:"name"             yaml:"name"`
-	Rename   ResourceName      `json:"rename,omitempty" yaml:"rename,omitempty"`
-	Devices  ReplicatedDevices `json:"devices"          yaml:"devices,flow"`
-	Replicas int               `json:"replicas"         yaml:"replicas"`
+	Name     ResourceName       `json:"name"             yaml:"name"`
+	Rename   ResourceName       `json:"rename,omitempty" yaml:"rename,omitempty"`
+	Devices  *ReplicatedDevices `json:"devices"          yaml:"devices,flow"`
+	Replicas int                `json:"replicas"         yaml:"replicas"`
 }
 
 // ReplicatedDevices encapsulates the set of devices that should be replicated for a given resource.

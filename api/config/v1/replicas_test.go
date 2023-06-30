@@ -283,7 +283,7 @@ func TestUnmarshalReplicatedResource(t *testing.T) {
 			}`,
 			output: ReplicatedResource{
 				Name:     NoErrorNewResourceName("valid"),
-				Devices:  ReplicatedDevices{All: true},
+				Devices:  &ReplicatedDevices{All: true},
 				Replicas: 2,
 			},
 		},
@@ -296,7 +296,7 @@ func TestUnmarshalReplicatedResource(t *testing.T) {
 			}`,
 			output: ReplicatedResource{
 				Name:     NoErrorNewResourceName("valid"),
-				Devices:  ReplicatedDevices{All: true},
+				Devices:  &ReplicatedDevices{All: true},
 				Replicas: 2,
 				Rename:   NoErrorNewResourceName("valid-shared"),
 			},
@@ -322,7 +322,7 @@ func TestUnmarshalReplicatedResource(t *testing.T) {
 			}`,
 			output: ReplicatedResource{
 				Name:     NoErrorNewResourceName("valid"),
-				Devices:  ReplicatedDevices{All: true},
+				Devices:  &ReplicatedDevices{All: true},
 				Replicas: 2,
 			},
 		},
@@ -334,7 +334,7 @@ func TestUnmarshalReplicatedResource(t *testing.T) {
 			}`,
 			output: ReplicatedResource{
 				Name:     NoErrorNewResourceName("valid"),
-				Devices:  ReplicatedDevices{All: true},
+				Devices:  &ReplicatedDevices{All: true},
 				Replicas: 2,
 				Rename:   NoErrorNewResourceName("valid-shared"),
 			},
@@ -410,7 +410,7 @@ func TestUnmarshalTimeSlicing(t *testing.T) {
 				Resources: []ReplicatedResource{
 					{
 						Name:     NoErrorNewResourceName("valid"),
-						Devices:  ReplicatedDevices{All: true},
+						Devices:  &ReplicatedDevices{All: true},
 						Replicas: 2,
 					},
 				},
@@ -433,12 +433,12 @@ func TestUnmarshalTimeSlicing(t *testing.T) {
 				Resources: []ReplicatedResource{
 					{
 						Name:     NoErrorNewResourceName("valid1"),
-						Devices:  ReplicatedDevices{All: true},
+						Devices:  &ReplicatedDevices{All: true},
 						Replicas: 2,
 					},
 					{
 						Name:     NoErrorNewResourceName("valid2"),
-						Devices:  ReplicatedDevices{All: true},
+						Devices:  &ReplicatedDevices{All: true},
 						Replicas: 2,
 					},
 				},
